@@ -137,7 +137,7 @@ func singleByteCharXor(msgs []string) (string, error) {
 	return result, nil
 }
 func detectSingleCharacterXOR() (string, error) {
-	content, err := ioutil.ReadFile("testfile/detectsinglecharxor.in")
+	content, err := ioutil.ReadFile("testfiles/detectsinglecharxor.in")
 	if err != nil {
 		return "", err
 	}
@@ -191,7 +191,7 @@ func findKeySize(f []byte) int {
 }
 
 func breakRepeatingkeyXOR() error {
-	file, err := ioutil.ReadFile("testfile/repeatingkeyxor.in") // For read access.
+	file, err := ioutil.ReadFile("testfiles/repeatingkeyxor.in") // For read access.
 	if err != nil {
 		return err
 	}
@@ -249,7 +249,7 @@ func aesECBmode(key string, ciphertext []byte) []byte {
 
 }
 func detectAESECB() error {
-	text, err := ioutil.ReadFile("testfile/detectaesecbmode.in")
+	text, err := ioutil.ReadFile("testfiles/detectaesecbmode.in")
 	if err != nil {
 		return err
 	}

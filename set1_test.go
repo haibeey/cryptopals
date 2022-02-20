@@ -99,7 +99,7 @@ func TestBreakingRepeatingXor(t *testing.T) {
 }
 
 func TestAesECBmode(t *testing.T) {
-	text, err := ioutil.ReadFile("testfile/ecbmode.in")
+	text, err := ioutil.ReadFile("testfiles/ecbmode.in")
 	if err != nil {
 		t.Errorf("%s", err)
 	}
