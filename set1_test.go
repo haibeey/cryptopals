@@ -109,7 +109,7 @@ func TestAesECBmode(t *testing.T) {
 		t.Errorf("%s", err)
 	}
 
-	fmt.Println(fmt.Sprintf("%s", aesECBmode("YELLOW SUBMARINE", fileContent))[0])
+	fmt.Println(fmt.Sprintf("%s", aesECBDecrypt("YELLOW SUBMARINE", fileContent))[0])
 
 }
 

@@ -78,17 +78,17 @@ func xorHex(a, b string) ([]byte, string, error) {
 
 func scoreEnglishText(text string) float32 {
 	//taking care of other white space character for conformity
-	for i:=0;i<20;i++{
+	for i := 0; i < 20; i++ {
 		text = strings.ReplaceAll(text, strings.Repeat("\n", i), " ")
 		text = strings.ReplaceAll(text, strings.Repeat("\t", i), " ")
 	}
-	characters:=strings.Split("abcdefghijklmnopqstuvwxzy","")
+	characters := strings.Split("abcdefghijklmnopqstuvwxzy", "")
 	cw := float32(strings.Count(text, " "))
-	for _,c:=range characters{
-		cw+=float32(strings.Count(text,c))
+	for _, c := range characters {
+		cw += float32(strings.Count(text, c))
 	}
 
-	return cw/float32(len(text))
+	return cw / float32(len(text))
 
 }
 
@@ -218,7 +218,7 @@ func breakRepeatingkeyXOR() error {
 		if err != nil {
 			fmt.Println(err)
 		}
-		keys[i] = strings.Split(key,"")[0]
+		keys[i] = strings.Split(key, "")[0]
 	}
 
 	joinKey := ""
@@ -231,7 +231,7 @@ func breakRepeatingkeyXOR() error {
 	return nil
 }
 
-func aesECBmode(key string, ciphertext []byte) []byte {
+func aesECBDecrypt(key string, ciphertext []byte) []byte {
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
 		panic(err)
@@ -246,8 +246,8 @@ func aesECBmode(key string, ciphertext []byte) []byte {
 	}
 
 	return res
-
 }
+
 func detectAESECB() error {
 	text, err := ioutil.ReadFile("testfiles/detectaesecbmode.in")
 	if err != nil {
@@ -270,5 +270,3 @@ func detectAESECB() error {
 	return nil
 
 }
-
-func main() {}
